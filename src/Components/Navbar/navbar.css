@@ -1,0 +1,22 @@
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 36px 26px;
+  background: #fff7ed;
+  align-items: center;
+}
+
+.nav-container > a,
+.nav-links > a {
+  text-decoration: none;
+}
+
+.nav-container > a:hover,
+.nav-links > a:hover {
+  text-decoration: underline;
+}
+
+.nav-links{
+    display: flex;
+    gap: 13px;
+}

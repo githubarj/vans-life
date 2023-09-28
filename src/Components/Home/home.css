@@ -1,0 +1,29 @@
+.home-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 51px;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 26px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("/public/backgroundImages/9b62f902c3de6d1b54b3a5d23341752c.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.home-header {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+}
+
+.home-button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  background: #ff8c38;
+  border: none;
+  cursor: pointer;
+}

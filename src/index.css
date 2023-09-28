@@ -1,5 +1,70 @@
-*{
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: Inter;
+  font-style: normal;
+}
+
+.app-heading {
+  color: #000;
+  font-size: 1.58456rem;
+  font-weight: 900;
+  line-height: 2.51694rem; /* 158.842% */
+}
+
+.heading-large {
+  color: #fff;
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 2.625rem; /* 116.667% */
+}
+
+.heading-medium {
+  color: #161616;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2.375rem; /* 118.75% */
+}
+
+.heading-small {
+  color: #161616;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.875rem; /* 125% */
+}
+
+.text-normal {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem; /* 150% */
+}
+
+.text-medium {
+  color: #fff;
+  font-size: 0.99663rem;
+  font-weight: 700;
+  line-height: 1.97888rem; /* 198.552% */
+}
+
+.button-text {
+  color: var(--white, #fff);
+  font-size: 0.99663rem;
+  font-weight: 700;
+  line-height: 1.49494rem; /* 150% */
+}
+
+.nav-text {
+  color: #4d4d4d;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.43269rem; /* 143.267% */
+}
+
+.footer-text {
+  color: #aaa;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.43269rem; /* 163.733% */
 }
