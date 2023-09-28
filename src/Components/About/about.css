@@ -1,0 +1,39 @@
+.about-coverImage {
+  background-image: url("/backgroundImages/image\ 55.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 233.21px;
+  width: 100%;
+}
+
+.about-mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 55px;
+  padding: 48px 26px;
+  background: #fff7ed;
+}
+
+.am-header {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.about-action {
+  padding: 32px 37px;
+  border-radius: 5px;
+  background: #ffcc8d;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: flex-start;
+}
+
+.about-button {
+  padding: 13px 22px;
+  border-radius: 10px;
+  background: #161616;
+  border: none;
+}

@@ -41,6 +41,15 @@
   line-height: 1.5rem; /* 150% */
 }
 
+.text-normal-black {
+  color: #161616;
+  font-family: Inter;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.375rem; /* 137.5% */
+}
+
 .text-medium {
   color: #fff;
   font-size: 0.99663rem;
