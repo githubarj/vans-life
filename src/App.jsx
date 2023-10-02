@@ -17,7 +17,6 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/vans" element={<Vans />} />
         <Route path="/vans/:id" element={<VansDetails />} />
-        <Route path="/vansdetails" element={<VansDetails />} />
       </Routes>
       <Footer />
     </div>

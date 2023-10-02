@@ -7,7 +7,7 @@ function SingleVan(props) {
   const navigate = useNavigate();
 
   function handleClick () {
-    navigate(`/vans/${1}`);
+    navigate(`/vans/${props.id}`);
   }
 
   const style = {
@@ -40,7 +40,7 @@ function SingleVan(props) {
 
 SingleVan.propTypes = {
   name: PropTypes.string,
-  price: PropTypes.string,
+  price: PropTypes.number,
   type: PropTypes.string,
   imageUrl: PropTypes.string,
   id: PropTypes.string,

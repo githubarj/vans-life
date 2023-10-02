@@ -1,37 +1,56 @@
-import "./vans.css"
-import { Link } from "react-router-dom"
+import "./vans.css";
+import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 function VansDetails() {
+  const params = useParams();
+
+  const [details, setDetails] = useState({});
+  useEffect(() => {
+    fetch(`/api/vans/${params.id}`)
+      .then((res) => res.json())
+      .then((data) => setDetails(data.vans));
+  }, [params.id]);
+
   return (
-    <div className="van-details-container">
-      <Link to="/vans" className="vans-back">
-        <img src="/icons/Arrow 1.png" alt="" /> <p >Back to all vans</p>
-      </Link>
-      <div className="details-content">
-        <img
-          src="/backgroundImages/Rectangle 162.png"
-          alt=""
-          className="details-image"
-        />
-        <div className="content-information">
-          <button className="type-button">Simple</button>
-          <div className="text-information">
-            <h1>Modest Explorer</h1>
-            <h2>
-              $60 <span className="per-day">/day</span>{" "}
-            </h2>
-            <p>
-              The Modest Explorer is a van designed to get you out of the house
-              and into nature. This beauty is equipped with solar panels, a
-              composting toilet, a water tank and kitchenette. The idea is that
-              you can pack up your home and escape for a weekend or even longer!
-            </p>
+    <div>
+      {details && (
+        <div className="van-details-container">
+          <Link to="/vans" className="vans-back">
+            <img src="/icons/Arrow 1.png" alt="" /> <p>Back to all vans</p>
+          </Link>
+          <div className="details-content">
+            <img src={details.imageUrl} alt="" className="details-image" />
+            <div className="content-information">
+              <button
+                className="type-button"
+                style={{
+                  background:
+                    details.type === "rugged"
+                      ? "#115E59"
+                      : details.type === "luxury"
+                      ? "#161616"
+                      : "#E17654",
+                }}
+              >
+                {details.type}
+              </button>
+              <div className="text-information">
+                <h1>{details.name}</h1>
+                <h2>
+                  ${details.price}
+                  <span className="per-day">/day</span>{" "}
+                </h2>
+                <p>{details.description}</p>
+              </div>
+              <button className="rent-action">Rent this van</button>
+            </div>
           </div>
-          <button className="rent-action">Rent this van</button>
         </div>
-      </div>
+      )}
     </div>
   );
 }
 
-export default VansDetails
+export default VansDetails;
