@@ -20,3 +20,8 @@
     display: flex;
     gap: 13px;
 }
+
+.active {
+  text-decoration: underline !important;
+  color: black !important;
+}

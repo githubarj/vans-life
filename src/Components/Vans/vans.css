@@ -1,0 +1,188 @@
+.vans-container {
+  display: flex;
+  flex-direction: column;
+  gap: 55px;
+  padding: 54px 26px 85px;
+  background: #fff7ed;
+}
+
+.vans-header {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.filtering {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-array {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.filter-buttons {
+  padding: 7px 26px;
+  border: none;
+  background: #ffead0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.clear-filters {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.vans-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+}
+
+.single-container {
+  flex: calc(50% -32px);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.single-container:hover {
+  transform: scale(1.05);
+}
+
+.van-image {
+  width: 100%;
+  max-height: 229.227px;
+  border-radius: 5px;
+}
+
+.first-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-information {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-information button {
+  border-radius: 5px;
+  border: none;
+  padding: 3px 14px;
+  cursor: pointer;
+}
+
+/* ================================Vans-details============================================================= */
+.van-details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40.79px;
+  padding: 40px 26px 84px;
+  background: #fff7ed;
+}
+
+.vans-back {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.vans-back p {
+  color: #201f1d;
+  font-family: Inter;
+  font-size: 0.99663rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.43269rem; /* 143.75% */
+  text-decoration-line: underline;
+}
+
+.details-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 52px;
+}
+
+.details-content img {
+  border-radius: 5px;
+}
+
+.content-information {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content-information .type-button {
+  border-radius: 5px;
+  background: #e17654;
+  align-self: flex-start;
+  color: #ffead0;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.97888rem; /* 197.885% */
+  border: none;
+  padding: 3px 13px;
+}
+
+.text-information {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.text-information h1 {
+  color: #161616;
+  font-family: Inter;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.10325rem; /* 105.164% */
+}
+
+.text-information h2 {
+  color: #161616;
+  font-family: Inter;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.7595rem; /* 183.967% */
+}
+
+.text-information .per-day {
+  font-weight: 500 !important;
+}
+
+.text-information p {
+  color: #161616;
+  font-family: Inter;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.49494rem; /* 149.496% */
+}
+
+.rent-action {
+  border-radius: 4.983px;
+  background: #ff8c38;
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.97888rem; /* 175.898% */
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}

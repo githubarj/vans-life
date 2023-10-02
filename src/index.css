@@ -77,3 +77,40 @@
   font-weight: 500;
   line-height: 1.43269rem; /* 163.733% */
 }
+
+.filters-text {
+  color: #4d4d4d;
+  font-family: Inter;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.49494rem; /* 149.496% */
+}
+
+.card-text {
+  color: #161616;
+  font-family: Inter;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.97888rem; /* 158.308% */
+}
+
+.card-button-text {
+  color: #ffead0;
+  font-family: Inter;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.97888rem; /* 197.885% */
+}
+
+.day-text {
+  color: #161616;
+  text-align: right;
+  font-family: Avenir Next;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.97888rem; /* 226.154% */
+}
