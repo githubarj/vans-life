@@ -1,8 +1,7 @@
+import "./host.css";
 
 function Income() {
-  return (
-    <div>Income</div>
-  )
+  return <div>Income</div>;
 }
 
-export default Income
+export default Income;
