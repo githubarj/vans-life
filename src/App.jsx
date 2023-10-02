@@ -6,6 +6,9 @@ import Vans from "./Components/Vans/Vans";
 import "../server";
 import VansDetails from "./Components/Vans/VansDetails";
 import Layout from "./Components/Layout";
+import Dashboard from "./Components/Host/Dashboard";
+import Income from "./Components/Host/Income";
+import Reviews from "./Components/Host/Reviews";
 
 
 
@@ -18,6 +21,9 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/vans" element={<Vans />} />
           <Route path="/vans/:id" element={<VansDetails />} />
+          <Route path="/host" element={<Dashboard />} />
+          <Route path="/host/income" element={<Income />} />
+          <Route path="/host/reviews" element={<Reviews />} />
         </Route>
       </Routes>
     </div>
