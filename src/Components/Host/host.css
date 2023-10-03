@@ -1,16 +1,81 @@
 .host-nav {
-    display: flex;
+  display: flex;
 }
 
 .host-nav a {
-    text-decoration: none;
-    color: #4D4D4D;
-    font-weight: 500;
-    padding: 5px 20px;
+  text-decoration: none;
+  color: #4d4d4d;
+  font-weight: 500;
+  padding: 5px 20px;
 }
 
 .host-nav a:hover {
-    color: #161616;
-    text-decoration: underline;
-    font-weight: 600;
+  color: #161616;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.active {
+  text-decoration: underline !important;
+  color: black !important;
+}
+
+.host-vans-container {
+  display: flex;
+  flex-direction: column;
+  padding: 55px 26px 66px;
+  gap: 32px;
+}
+
+.host-vans-container h1 {
+  color: #161616;
+  font-family: Inter;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.10325rem; /* 105.164% */
+}
+
+.all-listed-vans {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.vans-listing {
+  display: flex;
+  gap: 17px;
+  padding: 18px 24px;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.vans-listing:hover {
+  transform: scale(1.02);
+}
+
+.vans-listing img {
+  max-width: 65px;
+  max-height: 65px;
+  border-radius: 5px;
+}
+
+.vans-listing h2 {
+  color: #161616;
+  font-family: Inter;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.97888rem; /* 158.308% */
+}
+
+.vans-listing p {
+  color: #4d4d4d;
+  font-family: Inter;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.97888rem; /* 197.885% */
 }

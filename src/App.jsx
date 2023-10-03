@@ -10,10 +10,8 @@ import Dashboard from "./Components/Host/Dashboard";
 import Income from "./Components/Host/Income";
 import Reviews from "./Components/Host/Reviews";
 import HostLayout from "./Components/Host/HostLayout";
-
-
-
-
+import HostVans from "./Components/Host/HostVans";
+import IndividualListing from "./Components/Host/IndividualListing";
 
 function App() {
   return (
@@ -21,13 +19,15 @@ function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/vans" element={<Vans />} />
-          <Route path="/vans/:id" element={<VansDetails />} />
-          <Route path="/host" element={<HostLayout />}>
-            <Route path="/host" element={<Dashboard />} />
-            <Route path="/host/income" element={<Income />} />
-            <Route path="/host/reviews" element={<Reviews />} />
+          <Route path="about" element={<About />} />
+          <Route path="vans" element={<Vans />} />
+          <Route path="vans/:id" element={<VansDetails />} />
+          <Route path="host" element={<HostLayout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="income" element={<Income />} />
+            <Route path="listings" element={<HostVans />} />
+            <Route path="listings/:id" element={<IndividualListing />} />
+            <Route path="reviews" element={<Reviews />} />
           </Route>
         </Route>
       </Routes>

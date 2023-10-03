@@ -1,15 +1,21 @@
 import "./host.css";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
+import { hostNavs } from "../../Data/NavItems";
 
 function HostLayout() {
+
+  const hostNavigation = hostNavs.map((item, index) => (
+    <NavLink key={index} to={item.link} className={({isActive}) => isActive && "active"} end  >
+      {item.name}
+    </NavLink>
+  ));
+
   return (
     <div>
       <>
         <nav className="host-nav">
-          <Link to="/host">Dashboard</Link>
-          <Link to="/host/income">Income</Link>
-          <Link to="/host/reviews">Reviews</Link>
-        </nav>
+          {hostNavigation}
+        </nav> 
         <Outlet />
       </>
     </div>
