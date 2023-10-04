@@ -7,7 +7,7 @@ function SingleVan(props) {
   const navigate = useNavigate();
 
   function handleClick () {
-    navigate(`/vans/${props.id}`) ;
+    navigate(`${props.id}`) ;
   }
 
   const style = {

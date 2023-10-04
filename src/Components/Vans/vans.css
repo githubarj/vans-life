@@ -30,11 +30,14 @@
   background: #ffead0;
   border-radius: 5px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .clear-filters {
   cursor: pointer;
   text-decoration: underline;
+  border: none;
+  background: none;
 }
 
 .vans-cards {
@@ -185,4 +188,18 @@
   border: none;
   padding: 10px;
   cursor: pointer;
+}
+
+
+.rugged:hover, .rugged.selected {
+  background: #115e59;
+  color: #ffead0;
+}
+.luxury:hover, .luxury.selected {
+  background: #161616;
+  color: #ffead0;
+}
+.simple:hover, .simple.selected {
+  background: #e17654;
+  color: #ffead0;
 }

@@ -17,7 +17,7 @@ function VansDetails() {
     <div>
       {details && (
         <div className="van-details-container">
-          <Link to="/vans" className="vans-back">
+          <Link to=".." className="vans-back" relative="path">
             <img src="/icons/Arrow 1.png" alt="" /> <p>Back to all vans</p>
           </Link>
           <div className="details-content">

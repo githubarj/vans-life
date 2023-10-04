@@ -3,7 +3,7 @@ import { filters } from "../../Data/vans";
 import SingleVan from "./SingleVan";
 import { useEffect } from "react";
 import { useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 function Vans() {
   const [vans, setVans] = useState([]);
 
@@ -23,10 +23,23 @@ function Vans() {
     <SingleVan key={item.id} {...item} />
   ));
 
+  function handFilters(key, value) {
+    setSearchParams((prevParams) => {
+      value === null ? prevParams.delete(key) : prevParams.set(key, value);
+      return prevParams;
+    });
+  }
+
   const filtersArrray = filters.map((item, index) => (
-    <Link key={index} to={item.link}>
-      <button className="filters-text filter-buttons ">{item.name}</button>
-    </Link>
+    <button
+      key={index}
+      className={`filters-text filter-buttons ${item.name.toLowerCase()} 
+      ${searchFilters === item.name.toLowerCase() ? "selected" : null} 
+      `}
+      onClick={() => handFilters("type", item.name.toLowerCase())}
+    >
+      {item.name}
+    </button>
   ));
 
   return (
@@ -35,9 +48,14 @@ function Vans() {
         <h1 className="heading-medium">Explore our van options</h1>
         <div className="filtering">
           <div className="filter-array"> {filtersArrray}</div>
-          <Link className="filters-text clear-filters" to=".">
-            Clear Filters
-          </Link>
+          {searchFilters && (
+            <button
+              className="filters-text clear-filters"
+              onClick={() => handFilters("type", null)}
+            >
+              Clear Filters
+            </button>
+          )}
         </div>
       </div>
       <div className="vans-cards">{vansArray}</div>
