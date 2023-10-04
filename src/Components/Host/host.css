@@ -44,6 +44,7 @@
 
 .vans-listing {
   display: flex;
+  text-decoration: none;
   gap: 17px;
   padding: 18px 24px;
   border-radius: 6px;
@@ -78,4 +79,118 @@
   font-style: normal;
   font-weight: 500;
   line-height: 1.97888rem; /* 197.885% */
+}
+
+.listing-layout-container {
+  display: flex;
+  flex-direction: column;
+  padding: 61px 26px 45px;
+  gap: 37px;
+}
+
+.back-to-all {
+  color: #201f1d;
+  font-family: Inter;
+  font-size: 0.99663rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.43269rem; /* 143.75% */
+  text-decoration-line: underline;
+  cursor: pointer;
+  display: flex;
+  gap: 11px;
+  align-items: center;
+}
+
+.back-to-all img {
+  text-decoration: none;
+  width: auto;
+  height: auto;
+}
+
+.shared-header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 6px;
+  background: #fff;
+  padding: 23px 25px;
+  gap: 27px;
+}
+
+.shared-header img {
+  max-width: 160.15px;
+  max-height: 157.903px;
+  border-radius: 5px;
+}
+
+.shared-header-content {
+  display: flex;
+  gap: 19px;
+  align-items: center;
+}
+
+.shc-information button {
+  border-radius: 4.072px;
+  color: #ffead0;
+  text-align: center;
+  font-family: Inter;
+  font-size: 0.81431rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.61144rem; /* 197.885% */
+  padding: 3px 11px;
+  border: none;
+  margin-bottom: 16px;
+}
+
+.shc-information h1 {
+  color: #161616;
+  font-family: Inter;
+  font-size: 1.62863rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.71275rem; /* 105.164% */
+}
+
+.shc-information h2 {
+  color: #161616;
+  font-family: Inter;
+  font-size: 1.2215rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.24713rem; /* 183.967% */
+}
+
+.shc-information span {
+  color: #161616;
+  font-family: Inter;
+  font-size: 1.01788rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.24713rem;
+}
+
+.shared-header-navs {
+  display: flex;
+  gap: 27px;
+}
+
+.shared-header-navs a {
+  text-decoration: none;
+  color: #4d4d4d;
+  font-family: Inter;
+  font-size: 1.00931rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.28538rem; /* 127.348% */
+}
+
+.shared-header-navs a:hover {
+  color: #161616;
+  text-decoration: underline;
+}
+.active {
+  text-decoration: underline !important;
+  color: black !important;
 }

@@ -3,9 +3,13 @@ import { Outlet, NavLink } from "react-router-dom";
 import { hostNavs } from "../../Data/NavItems";
 
 function HostLayout() {
-
   const hostNavigation = hostNavs.map((item, index) => (
-    <NavLink key={index} to={item.link} className={({isActive}) => isActive && "active"} end  >
+    <NavLink
+      key={index}
+      to={item.link}
+      className={({ isActive }) => (isActive ? "active" : undefined)}
+      end
+    >
       {item.name}
     </NavLink>
   ));
@@ -13,9 +17,7 @@ function HostLayout() {
   return (
     <div>
       <>
-        <nav className="host-nav">
-          {hostNavigation}
-        </nav> 
+        <nav className="host-nav">{hostNavigation}</nav>
         <Outlet />
       </>
     </div>

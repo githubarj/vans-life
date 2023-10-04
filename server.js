@@ -87,10 +87,10 @@ createServer({
       return schema.vans.find(id);
     });
 
-    this.get("/host/vans", (schema, request) => {
-      // Hard-code the hostId for now
-      return schema.vans.where({ hostId: "123" });
-    });
+      this.get("/host/listings", (schema, request) => {
+        // Hard-code the hostId for now
+        return schema.vans.where({ hostId: "123" });
+      });
 
     this.get("/host/vans/:id", (schema, request) => {
       // Hard-code the hostId for now

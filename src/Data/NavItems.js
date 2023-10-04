@@ -1,14 +1,14 @@
 export const navItems = [
   {
-    link: "/host",
+    link: "host",
     name: "Host",
   },
   {
-    link: "/about",
+    link: "about",
     name: "About",
   },
   {
-    link: "/vans",
+    link: "vans",
     name: "vans",
   },
 
@@ -16,19 +16,34 @@ export const navItems = [
 
 export const hostNavs = [
   {
-    link: "/host",
+    link: ".",
     name: "Dashboard",
   },
   {
-    link: "/host/income",
+    link: "income",
     name: "Income",
   },
   {
-    link: "/host/listings",
+    link: "listings",
     name: "Vans",
   },
   {
-    link: "/host/reviews",
+    link: "reviews",
     name: "Reviews",
+  },
+];
+
+export const listingNavs = [
+  {
+    link: ".",
+    name: "Details",
+  },
+  {
+    link: "pricing",
+    name: "Pricing",
+  },
+  {
+    link: "photos",
+    name: "Photos",
   },
 ];

@@ -6,7 +6,8 @@ function Navbar() {
   const navigationLinks = navItems.map((item, index) => (
     <NavLink
       key={index}
-      className={`nav-text ${({ isActive }) => isActive && "active"} `}
+      className={`nav-text ${({ isActive }) =>
+        isActive ? "active" : undefined} `}
       to={item.link}
     >
       {item.name}
