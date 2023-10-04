@@ -51,6 +51,7 @@
   flex: calc(50% -32px);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  text-decoration: none;
 }
 
 .single-container:hover {
@@ -190,16 +191,18 @@
   cursor: pointer;
 }
 
-
-.rugged:hover, .rugged.selected {
+.rugged:hover,
+.rugged.selected {
   background: #115e59;
   color: #ffead0;
 }
-.luxury:hover, .luxury.selected {
+.luxury:hover,
+.luxury.selected {
   background: #161616;
   color: #ffead0;
 }
-.simple:hover, .simple.selected {
+.simple:hover,
+.simple.selected {
   background: #e17654;
   color: #ffead0;
 }

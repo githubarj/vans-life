@@ -1,11 +1,13 @@
 import "./vans.css";
 import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 function VansDetails() {
   const params = useParams();
+  const location = useLocation();
 
+  const queries = location.state.search || null;
   const [details, setDetails] = useState({});
   useEffect(() => {
     fetch(`/api/vans/${params.id}`)
@@ -17,7 +19,7 @@ function VansDetails() {
     <div>
       {details && (
         <div className="van-details-container">
-          <Link to=".." className="vans-back" relative="path">
+          <Link to={`..?${queries}`} className="vans-back" relative="path">
             <img src="/icons/Arrow 1.png" alt="" /> <p>Back to all vans</p>
           </Link>
           <div className="details-content">

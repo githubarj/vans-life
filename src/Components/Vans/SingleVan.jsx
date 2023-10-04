@@ -1,15 +1,8 @@
 import "./vans.css";
 import PropTypes from "prop-types";
-import { useNavigate } from "react-router-dom";
+import {Link } from "react-router-dom";
 
 function SingleVan(props) {
-
-  const navigate = useNavigate();
-
-  function handleClick () {
-    navigate(`${props.id}`) ;
-  }
-
   const style = {
     background:
       props.type.toLowerCase() === "rugged"
@@ -20,7 +13,11 @@ function SingleVan(props) {
   };
 
   return (
-    <div className="single-container" onClick={handleClick} >
+    <Link
+      className="single-container"
+      to={props.id}
+      state={{ search: props.searchParams.toString() }}
+    >
       <img src={props.imageUrl} alt="" className="van-image" />
       <div className="card-information">
         <div className="first-section">
@@ -34,7 +31,7 @@ function SingleVan(props) {
           </button>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
@@ -44,6 +41,7 @@ SingleVan.propTypes = {
   type: PropTypes.string,
   imageUrl: PropTypes.string,
   id: PropTypes.string,
+  searchParams: PropTypes.object,
 };
 
 export default SingleVan;
