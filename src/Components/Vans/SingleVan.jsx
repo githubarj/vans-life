@@ -16,7 +16,10 @@ function SingleVan(props) {
     <Link
       className="single-container"
       to={props.id}
-      state={{ search: props.searchParams.toString() }}
+      state={{
+        search: `?${props.searchParams.toString()}`,
+        type: props.searchFilters,
+      }}
     >
       <img src={props.imageUrl} alt="" className="van-image" />
       <div className="card-information">
@@ -42,6 +45,7 @@ SingleVan.propTypes = {
   imageUrl: PropTypes.string,
   id: PropTypes.string,
   searchParams: PropTypes.object,
+  searchFilters: PropTypes.string,
 };
 
 export default SingleVan;

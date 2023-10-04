@@ -20,7 +20,7 @@ function Vans() {
     ? vans.filter((item) => item.type === searchFilters)
     : vans;
   const vansArray = vansList.map((item) => (
-    <SingleVan key={item.id} {...item} searchParams = {searchParams} />
+    <SingleVan key={item.id} {...item} searchParams = {searchParams} searchFilters = {searchFilters} />
   ));
 
   function handFilters(key, value) {

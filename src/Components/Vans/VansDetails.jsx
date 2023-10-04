@@ -7,7 +7,7 @@ function VansDetails() {
   const params = useParams();
   const location = useLocation();
 
-  const queries = location.state.search || null;
+  const queries = location.state?.search || "";
   const [details, setDetails] = useState({});
   useEffect(() => {
     fetch(`/api/vans/${params.id}`)
@@ -15,12 +15,15 @@ function VansDetails() {
       .then((data) => setDetails(data.vans));
   }, [params.id]);
 
+  console.log(location);
+
   return (
     <div>
       {details && (
         <div className="van-details-container">
           <Link to={`..?${queries}`} className="vans-back" relative="path">
-            <img src="/icons/Arrow 1.png" alt="" /> <p>Back to all vans</p>
+            <img src="/icons/Arrow 1.png" alt="" />
+            <p>Back to {`${location.state.type || "all"}`} vans</p>
           </Link>
           <div className="details-content">
             <img src={details.imageUrl} alt="" className="details-image" />
@@ -42,7 +45,7 @@ function VansDetails() {
                 <h1>{details.name}</h1>
                 <h2>
                   ${details.price}
-                  <span className="per-day">/day</span>{" "}
+                  <span className="per-day">/day</span>
                 </h2>
                 <p>{details.description}</p>
               </div>

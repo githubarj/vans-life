@@ -15,6 +15,7 @@ import ListingLayout from "./Components/Host/ListingLayout";
 import Details from "./Components/Host/Listing/Details";
 import Photos from "./Components/Host/Listing/Photos";
 import Pricing from "./Components/Host/Listing/Pricing";
+import PageNotFound from "./Components/PageNotFound";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
               <Route path="pricing" element={<Pricing />} />
             </Route>
           </Route>
+          <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>
     </div>
