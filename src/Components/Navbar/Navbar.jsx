@@ -9,6 +9,7 @@ function Navbar() {
       className={`nav-text ${({ isActive }) =>
         isActive ? "active" : undefined} `}
       to={item.link}
+      end
     >
       {item.name}
     </NavLink>
