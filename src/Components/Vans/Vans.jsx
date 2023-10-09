@@ -1,26 +1,30 @@
 import "./vans.css";
 import { filters } from "../../Data/vans";
 import SingleVan from "./SingleVan";
-import { useEffect } from "react";
-import { useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useLoaderData, useSearchParams } from "react-router-dom";
+import { getVans } from "../api";
+
+export function loader() {
+  return getVans();
+}
+
 function Vans() {
-  const [vans, setVans] = useState([]);
+  const vans = useLoaderData();
 
   const [searchParams, setSearchParams] = useSearchParams();
   const searchFilters = searchParams.get("type");
 
-  useEffect(() => {
-    fetch("/api/vans")
-      .then((res) => res.json())
-      .then((data) => setVans(data.vans));
-  }, []);
-
   const vansList = searchFilters
     ? vans.filter((item) => item.type === searchFilters)
     : vans;
+
   const vansArray = vansList.map((item) => (
-    <SingleVan key={item.id} {...item} searchParams = {searchParams} searchFilters = {searchFilters} />
+    <SingleVan
+      key={item.id}
+      {...item}
+      searchParams={searchParams}
+      searchFilters={searchFilters}
+    />
   ));
 
   function handFilters(key, value) {
@@ -41,6 +45,10 @@ function Vans() {
       {item.name}
     </button>
   ));
+
+  // if (loading) {
+  //   return <h1>Loading...</h1>;
+  // }
 
   return (
     <div className="vans-container">

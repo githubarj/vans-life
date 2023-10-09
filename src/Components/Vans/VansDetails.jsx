@@ -15,7 +15,6 @@ function VansDetails() {
       .then((data) => setDetails(data.vans));
   }, [params.id]);
 
-  console.log(location);
 
   return (
     <div>
