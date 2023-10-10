@@ -40,6 +40,9 @@ export default function Login() {
         />
         <button>Log in</button>
       </form>
+      <h2>
+        Don’t have an account?<a> Create one now</a>
+      </h2>
     </div>
   );
 }
