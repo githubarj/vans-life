@@ -22,11 +22,13 @@ import Photos from "./Components/Host/Listing/Photos";
 import Pricing from "./Components/Host/Listing/Pricing";
 import PageNotFound from "./Components/PageNotFound";
 import Error from "./Components/Error";
+import Login from "./Components/LogIn/LogIn";
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
-    <Route element={<Layout />} path="/" >
+    <Route element={<Layout />} path="/">
       <Route index element={<Home />} />
+      <Route path="logIn" element={<Login />} />
       <Route path="about" element={<About />} />
       <Route
         path="vans"
