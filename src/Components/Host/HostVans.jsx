@@ -1,14 +1,13 @@
-import { useEffect, useState } from "react";
 import "./host.css";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
+import { getHostVans } from "../api";
+
+export function loader () {
+  return getHostVans()
+}
 
 function HostVans() {
-  const [listedVans, setListedVans] = useState([]);
-  useEffect(() => {
-    fetch("/api/host/listings")
-      .then((res) => res.json())
-      .then((data) => setListedVans(data.vans));
-  }, []);
+  const listedVans = useLoaderData();
 
   const allHostVans = listedVans.map((van, index) => {
     return (

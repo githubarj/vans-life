@@ -1,22 +1,15 @@
 import "./host.css";
 import { Outlet, Link, NavLink } from "react-router-dom";
 import { listingNavs } from "../../Data/NavItems";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
+import { getHostVans } from "../api";
+
+export function loader({ params }) {
+  return getHostVans(params.id);
+}
 
 function ListingLayout() {
-  const [vanInfo, setVanInfo] = useState({});
-  const { id } = useParams();
-
-  useEffect(() => {
-    fetch(`/api/host/vans/${id}`)
-      .then((res) => res.json())
-      .then((data) => setVanInfo(data.vans[0]));
-  }, []);
-
-  if (!vanInfo) {
-    return <h1>Loading...</h1>;
-  }
+  const vanInfo = useLoaderData();
 
   return (
     <div className="listing-layout-container">
