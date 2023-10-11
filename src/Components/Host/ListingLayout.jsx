@@ -4,11 +4,12 @@ import { listingNavs } from "../../Data/NavItems";
 import { useLoaderData } from "react-router-dom";
 import { getHostVans } from "../api";
 
-export function loader({ params }) {
+export async function loader({ params }) {
   return getHostVans(params.id);
+  
 }
 
-function ListingLayout() {
+function  ListingLayout() {
   const vanInfo = useLoaderData();
 
   return (

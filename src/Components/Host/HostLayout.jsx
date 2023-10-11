@@ -10,7 +10,7 @@ function HostLayout() {
       className={({ isActive }) => (isActive ? "active" : undefined)}
       end
     >
-      {item.name}
+      {item.name}   
     </NavLink>
   ));
 

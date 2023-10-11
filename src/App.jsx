@@ -27,6 +27,7 @@ import Pricing from "./Components/Host/Listing/Pricing";
 import PageNotFound from "./Components/PageNotFound";
 import Error from "./Components/Error";
 import Login from "./Components/LogIn/LogIn";
+import { requireAuth } from "./Components/utils";
 
 // const loader = () => {
 //   return null;
@@ -52,31 +53,23 @@ const routes = createBrowserRouter(
       <Route
         path="host"
         element={<HostLayout />}
-        loader={async () => {
-          return null;
-        }}
+        loader={async () => await requireAuth()}
       >
         <Route
           index
           element={<Dashboard />}
-          loader={async () => {
-            return null;
-          }}
+          loader={async () => await requireAuth()}
         />
         <Route
           path="income"
           element={<Income />}
-          loader={async () => {
-            return null;
-          }}
+          loader={async () => await requireAuth()}
         />
         <Route path="listings" element={<HostVans />} loader={hostVansLoader} />
         <Route
           path="reviews"
           element={<Reviews />}
-          loader={async () => {
-            return null;
-          }}
+          loader={async () => await requireAuth()}
         />
         <Route
           path="listings/:id"
