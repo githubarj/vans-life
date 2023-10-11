@@ -15,12 +15,19 @@ function Navbar() {
     </NavLink>
   ));
 
+  function clearLocal () {
+    localStorage.removeItem("isLoggedIn")
+  }
+
   return (
     <nav className="nav-container">
       <Link className="app-heading" to="/">
         #VANLIFE
       </Link>
-      <div className="nav-links">{navigationLinks}</div>
+      <div className="nav-links">
+        {navigationLinks} 
+        <button onClick={clearLocal} >x</button>
+       </div>
     </nav>
   );
 }
