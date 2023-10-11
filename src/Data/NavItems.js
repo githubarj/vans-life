@@ -11,6 +11,10 @@ export const navItems = [
     link: "vans",
     name: "vans",
   },
+  {
+    link: "logIn",
+    icon: "/icons/avatar-icon.png"
+  }
 
 ];
 

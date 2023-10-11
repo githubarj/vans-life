@@ -18,8 +18,8 @@
   line-height: 1.5rem; /* 150% */
 }
 
-.login-container h2 a{
-    color: #FF8C38;
+.login-container h2 a {
+  color: #ff8c38;
 }
 
 .login-form {
@@ -59,4 +59,8 @@
   margin-top: 22px;
   color: white;
   font-family: "Inter", sans-serif;
+}
+
+.red {
+  color: #cc0000 !important;
 }

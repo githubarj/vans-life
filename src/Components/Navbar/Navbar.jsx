@@ -11,7 +11,7 @@ function Navbar() {
       to={item.link}
       end
     >
-      {item.name}
+      {item.name || <img src={item.icon} className="avtar-icon" alt="" />}
     </NavLink>
   ));
 

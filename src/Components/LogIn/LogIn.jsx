@@ -1,7 +1,17 @@
 import { useState } from "react";
-import "./logIn.css"
+import "./logIn.css";
+import { useLoaderData } from "react-router-dom";
+
+export function loader({ request }) {
+  console.log(new URL(request.url).searchParams.get("message"));
+  return new URL(request.url).searchParams.get("message");
+
+}
 
 export default function Login() {
+  const message = useLoaderData();
+  console.log(message);
+
   const [loginFormData, setLoginFormData] = useState({
     email: "",
     password: "",
@@ -23,6 +33,7 @@ export default function Login() {
   return (
     <div className="login-container">
       <h1>Sign in to your account</h1>
+      {message && <h2 className="red">{message}</h2>}
       <form onSubmit={handleSubmit} className="login-form">
         <input
           name="email"

@@ -26,7 +26,7 @@ import Photos from "./Components/Host/Listing/Photos";
 import Pricing from "./Components/Host/Listing/Pricing";
 import PageNotFound from "./Components/PageNotFound";
 import Error from "./Components/Error";
-import Login from "./Components/LogIn/LogIn";
+import Login, {loader as loginLoader} from "./Components/LogIn/LogIn";
 import { requireAuth } from "./Components/utils";
 
 // const loader = () => {
@@ -37,7 +37,7 @@ const routes = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<Layout />} path="/">
       <Route index element={<Home />} />
-      <Route path="logIn" element={<Login />} />
+      <Route path="logIn" element={<Login />} loader={loginLoader}/>
       <Route path="about" element={<About />} />
       <Route
         path="vans"
@@ -79,23 +79,17 @@ const routes = createBrowserRouter(
           <Route
             index
             element={<Details />}
-            loader={async () => {
-              return null;
-            }}
+            loader={async () => await requireAuth()}
           />
           <Route
             path="photos"
             element={<Photos />}
-            loader={async () => {
-              return null;
-            }}
+            loader={async () => await requireAuth()}
           />
           <Route
             path="pricing"
             element={<Pricing />}
-            loader={async () => {
-              return null;
-            }}
+            loader={async () => await requireAuth()}
           />
         </Route>
       </Route>

@@ -16,12 +16,23 @@
   text-decoration: underline;
 }
 
-.nav-links{
-    display: flex;
-    gap: 13px;
+.nav-links {
+  display: flex;
+  gap: 13px;
+  align-items: center;
 }
 
 .active {
   text-decoration: underline !important;
   color: black !important;
+}
+
+.avtar-icon {
+  width: 17px;
+  height: 17px;
+}
+
+.nav-text {
+  display: flex;
+  align-items: center;
 }
