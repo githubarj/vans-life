@@ -1,31 +1,40 @@
 import "./vans.css";
 import { filters } from "../../Data/vans";
 import SingleVan from "./SingleVan";
-import { useLoaderData, useSearchParams } from "react-router-dom";
+import { Await, defer, useLoaderData, useSearchParams } from "react-router-dom";
 import { getVans } from "../api";
+import { Suspense } from "react";
 
 export function loader() {
-  return getVans();
+  return defer({ vans: getVans() });
 }
 
 function Vans() {
-  const vans = useLoaderData();
+  const vansPromiseObject = useLoaderData();
+
+  const renderVans = (
+    <Await resolve={vansPromiseObject.vans}>
+      {(vans) => {
+        const vansList = searchFilters
+          ? vans.filter((item) => item.type === searchFilters)
+          : vans;
+
+        const vansArray = vansList.map((item) => (
+          <SingleVan
+            key={item.id}
+            {...item}
+            searchParams={searchParams}
+            searchFilters={searchFilters}
+          />
+        ));
+
+        return <div className="vans-cards">{vansArray}</div>;
+      }}
+    </Await>
+  );
 
   const [searchParams, setSearchParams] = useSearchParams();
   const searchFilters = searchParams.get("type");
-
-  const vansList = searchFilters
-    ? vans.filter((item) => item.type === searchFilters)
-    : vans;
-
-  const vansArray = vansList.map((item) => (
-    <SingleVan
-      key={item.id}
-      {...item}
-      searchParams={searchParams}
-      searchFilters={searchFilters}
-    />
-  ));
 
   function handFilters(key, value) {
     setSearchParams((prevParams) => {
@@ -46,10 +55,6 @@ function Vans() {
     </button>
   ));
 
-  // if (loading) {
-  //   return <h1>Loading...</h1>;
-  // }
-
   return (
     <div className="vans-container">
       <div className="vans-header">
@@ -66,7 +71,7 @@ function Vans() {
           )}
         </div>
       </div>
-      <div className="vans-cards">{vansArray}</div>
+      <Suspense fallback= {<h1>Loading Vans...</h1>} >{renderVans}</Suspense>
     </div>
   );
 }
