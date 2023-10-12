@@ -3,12 +3,14 @@ import { Outlet, Link, NavLink } from "react-router-dom";
 import { listingNavs } from "../../Data/NavItems";
 import { useLoaderData } from "react-router-dom";
 import { getHostVans } from "../api";
+import { requireAuth } from "../utils";
 
-export  function loader({ params }) {
-  return getHostVans(params.id); 
+export async function loader({ params, request }) {
+  await requireAuth(request);
+  return getHostVans(params.id);
 }
 
-function  ListingLayout() {
+function ListingLayout() {
   const vanInfo = useLoaderData();
 
   return (
