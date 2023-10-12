@@ -17,7 +17,6 @@ function VansDetails() {
 
   return (
     <div>
-      (
       <div className="van-details-container">
         <Link to={`..?${queries}`} className="vans-back" relative="path">
           <img src="/icons/Arrow 1.png" alt="" />
@@ -57,7 +56,6 @@ function VansDetails() {
           </Await>
         </Suspense>
       </div>
-      )
     </div>
   );
 }

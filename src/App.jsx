@@ -13,7 +13,9 @@ import VansDetails, {
   loader as vansDetailsLoader,
 } from "./Components/Vans/VansDetails";
 import Layout from "./Components/Layout";
-import Dashboard from "./Components/Host/Dashboard";
+import Dashboard, {
+  loader as dashboardLoader,
+} from "./Components/Host/Dashboard";
 import Income from "./Components/Host/Income";
 import Reviews from "./Components/Host/Reviews";
 import HostLayout from "./Components/Host/HostLayout";
@@ -57,23 +59,25 @@ const routes = createBrowserRouter(
         path="vans/:id"
         element={<VansDetails />}
         loader={vansDetailsLoader}
+        errorElement={<Error />}
       />
       <Route
         path="host"
         element={<HostLayout />}
         loader={async ({ request }) => await requireAuth(request)}
       >
-        <Route
-          index
-          element={<Dashboard />}
-          loader={async ({ request }) => await requireAuth(request)}
-        />
+        <Route index element={<Dashboard />} loader={dashboardLoader} />
         <Route
           path="income"
           element={<Income />}
           loader={async ({ request }) => await requireAuth(request)}
         />
-        <Route path="listings" element={<HostVans />} loader={hostVansLoader} />
+        <Route
+          path="listings"
+          element={<HostVans />}
+          loader={hostVansLoader}
+          errorElement={<Error />}
+        />
         <Route
           path="reviews"
           element={<Reviews />}
@@ -82,6 +86,7 @@ const routes = createBrowserRouter(
         <Route
           path="listings/:id"
           element={<ListingLayout />}
+          errorElement={<Error />}
           loader={listingLayoutLoader}
         >
           <Route

@@ -13,7 +13,7 @@ function Vans() {
   const vansPromiseObject = useLoaderData();
 
   const renderVans = (
-    <Await resolve={vansPromiseObject.vans}>
+    <Await resolve={vansPromiseObject.vans}> 
       {(vans) => {
         const vansList = searchFilters
           ? vans.filter((item) => item.type === searchFilters)
